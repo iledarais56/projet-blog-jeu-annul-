@@ -70,10 +70,10 @@ class BackController{
        
         require'app/views/Back/createJeu.php';
     }
-    function newJeu($newTitle,$newContent,$newImage,$newCategorie){
+    function newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote){
         $jeu = new \Project\Models\JeuManager();
         
-        $newJeu = $jeu->newJeu($newTitle,$newContent,$newImage,$newCategorie);
+        $newJeu = $jeu->newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote);
 
         header('location: indexAdmin.php?action=jeuxListe');
     }
@@ -86,9 +86,9 @@ class BackController{
 
         require'app/views/Back/jeu.php';
     }
-    function updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage){
+    function updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage,$updateAvis,$updateNote){
         $jeu = new \Project\Models\JeuManager();
-        $updateJeu = $jeu->updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage);
+        $updateJeu = $jeu->updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage,$updateAvis,$updateNote);
 
         header('location: indexAdmin.php?action=jeuxListe');
     }

@@ -41,21 +41,23 @@ class JeuManager extends Manager{
         $req->execute(array($id,$categorie));
         return $req;
     }
-    public function updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage){
+    public function updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage,$updateAvis,$updateNote){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('UPDATE jeux SET title= :title, content= :content, categorie= :categorie, img= :img WHERE id=:id');
+        $req = $bdd->prepare('UPDATE jeux SET title= :title, content= :content, categorie= :categorie, img= :img, avis= :avis, note= :note WHERE id=:id');
         $req->execute([
             'id'=>$id,
             'title'=>$updatetitle,
             'content'=>$updatecontent,
             'categorie'=>$updatecategorie,
-            'img'=>$updateimage
+            'img'=>$updateimage,
+            'avis'=>$updateAvis,
+            'note'=>$updateNote
         ]);
     }
-    public function newJeu($newTitle,$newContent,$newImage,$newCategorie){
+    public function newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('INSERT INTO jeux(title,content,img,categorie)VALUE(?,?,?,?)');
-        $req->execute(array($newTitle,$newContent,$newImage,$newCategorie));
+        $req = $bdd->prepare('INSERT INTO jeux(title,content,img,categorie,avis,note)VALUE(?,?,?,?,?,?)');
+        $req->execute(array($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote));
         return $req;    
         
     }

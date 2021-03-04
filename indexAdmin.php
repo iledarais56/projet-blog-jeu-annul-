@@ -62,7 +62,9 @@ try{
             $updatecontent = $_POST['content'];
             $updatecategorie = $_POST['categorie'];
             $updateimage = $_POST['img'];
-            $backController->updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage);
+            $updateAvis = $_POST['avis'];
+            $updateNote = $_POST['note'];
+            $backController->updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage,$updateAvis,$updateNote);
         }
         elseif($_GET['action']=='createJeu'){
             $backController->createJeu(); 
@@ -72,8 +74,11 @@ try{
             $newContent = $_POST['content'];
             $newImage = $_POST['img'];
             $newCategorie = $_POST['categorie'];
+            $newAvis = $_POST['avis'];
+            $newNote = $_POST['note'];
+
              
-            $backController->newJeu($newTitle,$newContent,$newImage,$newCategorie); 
+            $backController->newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote); 
            
         }
         elseif($_GET['action']=='images'){

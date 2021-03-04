@@ -23,8 +23,8 @@ try{
             $frontController->contact();
         }
         elseif($_GET['action']=='createCommentaire'){
-            $id= $_GET['id'];
-            $frontController->createCommentaire($id);
+            $newIdJeu= $_GET['id'];
+            $frontController->createCommentaire($newIdJeu);
         }
         elseif($_GET['action']=='postCommentaire'){
             $newIdJeu =$GET['id'];

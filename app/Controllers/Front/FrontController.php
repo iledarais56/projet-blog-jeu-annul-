@@ -29,7 +29,11 @@ class FrontController{
     function contact(){
         require'app/views/Front/contact.php';
     }
-    function createCommentaire($id){
+    function createCommentaire($newIdJeu){
+        
+        $commentaire = new \Project\Models\CommentaireManager();
+        $Commentaires = $commentaire->editCommentaire($newIdJeu);
+
         require'app/views/Front/commentaire.php';
     }
     function newCommentaire($newIdJeu,$newPseudo,$newContent){
