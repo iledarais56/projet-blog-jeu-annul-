@@ -67,4 +67,5 @@ class JeuManager extends Manager{
         return $req;    
         
     }
+   
 }

@@ -19,16 +19,16 @@
                                 <br>
                                 <label for="categorie">Catégorie</label>
                                 <br>
-                                <select id="categorie"name="catégorie">
+                                <select id="categorie"name="categorie">
                                     <option value="1">familiaux</option>
                                     <option value="2">enfant</option>
                                     <option value="3">d'ambiance</option>
                                     <option value="4">expert</option>
                                 </select>
                                 <br>
-                                <label for="img">Titre  seo de votre image</label>
+                                <label for="img">Titre de votre image<br>(en minuscules et avec des tirets a la place des espaces)</label>
                                 <br>
-                                <textarea id="image" name="img" ></textarea>
+                                <textarea id="img" name="img" ></textarea>
                                 <br> 
                                 <br>
                                 <input type="submit" value="Créer">

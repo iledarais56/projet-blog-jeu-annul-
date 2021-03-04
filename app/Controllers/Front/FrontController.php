@@ -21,11 +21,28 @@ class FrontController{
     function jeuFiche($id,$categorie){
         $jeu = new \Project\Models\jeuManager();
         $getJeuFiche = $jeu->getJeuFiche($id,$categorie);
+        $commentaire = new \Project\Models\CommentaireManager();
+        $getCommentaires =$commentaire->getCommentaires($id);
 
         require'app/views/Front/jeuFiche.php';
     }
     function contact(){
         require'app/views/Front/contact.php';
+    }
+    function createCommentaire($id){
+        require'app/views/Front/commentaire.php';
+    }
+    function newCommentaire($newIdJeu,$newPseudo,$newContent){
+        $commentaire = new \Project\Models\CommentaireManager();
+
+        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent);
+
+        header('location: index.php?action=jeuxFiche');
+    }
+    function commentaire($id){
+        $commentaire = new \Project\Models\CommentaireManager();
+        $Commentaires = $commentaire->getCommentaire($id);
+        require'app/views/Front/commentaire.php';
     }
     // envoi de mail
     function contactMail($lastname,$firstname,$mail,$sujet,$content){

@@ -22,6 +22,17 @@ try{
         elseif($_GET['action']=='contact'){
             $frontController->contact();
         }
+        elseif($_GET['action']=='createCommentaire'){
+            $id= $_GET['id'];
+            $frontController->createCommentaire($id);
+        }
+        elseif($_GET['action']=='postCommentaire'){
+            $newIdJeu =$GET['id'];
+            $newPseudo = $_POST['pseudo'];
+            $newContent = $_POST['content'];
+             
+            $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent); 
+        }
         //envoi du mail en bdd
         elseif($_GET['action']=='contactMail'){
             $_lastname = htmlspecialchars($_POST['lastname']);

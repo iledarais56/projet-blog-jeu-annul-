@@ -20,10 +20,10 @@
                                 <textarea id="content" name="content" style="height:200px" ><?= htmlspecialchars($jeu['content']) ?></textarea>
                                 <br>
                                 <label for="title">Titre de votre image<br>(avec des tirets à la place des espaces)</label>
-                                <textarea type="text" id="title" name="title"><?= htmlspecialchars($jeu['img']) ?></textarea>
+                                <textarea type="text" id="img" name="img"><?= htmlspecialchars($jeu['img']) ?></textarea>
                                 <br>
                                 <label for="categorie">Catégorie du jeu</label>
-                                <select id="categorie"name="catégorie">
+                                <select id="categorie"name="categorie">
                                     <option value="<?= htmlspecialchars($jeu['categorie']) ?>"><?= htmlspecialchars($categorie['title']) ?></option>
                                     <option value="1">familiaux</option>
                                     <option value="2">enfant</option>
