@@ -42,6 +42,7 @@ main{
 }
 .image-container img{
   width:80%;
+  height:80%;
 }
 .description{
   margin-left:50px;

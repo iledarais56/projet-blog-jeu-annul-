@@ -25,32 +25,37 @@
                         <br>
                     </div>
                 </div>
-                <br>
-                
-                <div>
+                <br> 
+            </div>   
+        </div>
+          <div>
                     <h3>Derniers commentaires sur ce jeu:</h3>
                     <br>
                     <div class="all-articles">
                         <?php foreach($getCommentaires as $commentaire){ ?>
-
+                            
                             <div class="article">
+                                <a href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
                                 <p>posté par: <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
                                 <br>
                                 <p><?=  htmlspecialchars($commentaire['content']) ?></p>
+                                </a>
                             </div>
                             <br>
-                            
 
                         <?php } ?>
                         <br>
                     </div><br><br>
+                    <div class="all-articles" >
                     <div >
-                        <a class="btn" href="indexAdmin.php?action=createCommentaire&id=<?=$jeu['id'] ?>">poster un commentaire</a>
-                    </div> 
+                        <a class="btn " href="index.php?action=createCommentaire&id=<?=$jeu['id'] ?>">poster un commentaire</a>
+                    </div>
+                    <div >
+                        <a class="btn " href="index.php?action=getAllcommentaires&id=<?=$jeu['id'] ?>">voir tous les commentaires</a>
+                    </div>
+                   </div> 
                 </div>
-            </div>
-            
-        </div><br><br>
+        <br><br>
             
     
 </section>

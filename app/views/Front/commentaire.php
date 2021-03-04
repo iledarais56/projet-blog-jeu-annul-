@@ -3,8 +3,8 @@
 
 <section>
 <div class="newImg">
-        <h2>Votre commentaire sur le jeu <?= $jeu['title']?></h2>
-        <form action="index.php?action=postCommentaire" method="post">
+        <h2>Votre commentaire sur le jeu </h2>
+        <form action="index.php?action=postCommentaire&id_jeu=<?=$jeu['id'] ?>" method="post">
 
             <div class="article_title">
                 <label for="pseudo">Votre pseudo</label>

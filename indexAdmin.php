@@ -7,6 +7,10 @@ try{
     $backController = new \Project\Controllers\Back\BackController;
 
     if(isset($_GET['action'])){
+
+//les différentes actions récupérées en back:
+
+
         //connexion et creation utilisateurs
         if($_GET['action']=='createAdmin'){
             $mail = $_POST['mail'];
@@ -25,6 +29,8 @@ try{
             }else{
                 throw new Exception('Renseigner vos identifiants');
             }
+
+
         }//gestion des mails
         elseif($_GET['action']=='mails'){
             $backController->mails();
@@ -32,9 +38,11 @@ try{
         elseif($_GET['action']=='deleteMail'){
             $id = $_GET['id'];
             $backController->deleteMail($id);
+
         }//retour au tableau de bord
         elseif($_GET['action']=='tdbAdmin'){
             $backController->tdbAdmin();
+
         }//deconnexion
         elseif($_GET['action']=='deconnexion'){
             session_destroy();
@@ -77,10 +85,11 @@ try{
             $newAvis = $_POST['avis'];
             $newNote = $_POST['note'];
 
-             
             $backController->newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote); 
            
         }
+
+        //gestion des images
         elseif($_GET['action']=='images'){
             $backController->images(); 
         }

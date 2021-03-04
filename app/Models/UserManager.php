@@ -2,6 +2,10 @@
 namespace Project\Models;
 
 class UserManager extends Manager{
+
+    //requetes liées aux utilisateurs
+
+    //injecte un nouvel utilisateur dans la table utilisateurs
     public function creatAdmin($mail,$mdp,$firstName){
         $bdd = $this->bdConnect();
         $user = $bdd->prepare('INSERT INTO utilisateurs(mail,mdp,firstname)VALUE(?,?,?)');
@@ -10,6 +14,7 @@ class UserManager extends Manager{
         return $user;
     }
 
+    //recupere tous dans la table utilisateur  ou mail=$mail
     public function recupMdp($mail,$mdp){
         $bdd = $this->bdConnect();
         $req =$bdd->prepare('SELECT *FROM utilisateurs WHERE mail =? ');
@@ -17,16 +22,5 @@ class UserManager extends Manager{
 
         return $req;
     }
-    public function getImages(){
-        $bdd = $this->bdConnect();
-        $req = $bdd->query('SELECT * FROM images');
-        return $req;
-    }
-    public function creatImage($title,$target_file){
-        $bdd = $this->bdConnect();
-        $req = $bdd->prepare('INSERT INTO images(title,img)VALUE(?,?)');
-        $req->execute(array($title,$target_file));
-        
-        return $req;
-    }
+    
 }

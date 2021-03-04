@@ -4,14 +4,20 @@ Use Project\Models\UserManager;
 
 class BackController{
 
-//administration
+//administration---------------------------------------------------------------------
+
+    //redirige vers la page connexionAdmin
     function connexionAdmin(){
         require'app/views/Back/connexionAdmin.php';
     }
+
+    //pour rediriger vers la fonction creatAdmin de UserManager
     function creatAdmin($firstName,$mdp,$mail){
         $userManager = new \Project\Models\UserManager();
         $user = $userManager->creatAdmin($firstName,$mdp,$mail);
     }
+
+    //verifie les bons identifiants puis redirige vers le tableau de bord de l'admin
     function connexion($mail,$mdp){
         $userManager = new \Project\Models\UserManager();
         $connexionAdm = $userManager->recupMdp($mail,$mdp);
@@ -30,15 +36,21 @@ class BackController{
             echo'Vos identifiants sont incorrects ';
         }
     }
+
+    //redirige vers la page tableauDeBord
     function tdbAdmin(){
         require'app/views/Back/tableauDeBord.php';
     }
+
+    //redirige vers la page mails ou on applique la fonction getMails() de ContactManager
     function mails(){
         $mails = new \Project\Models\ContactManager();
         $allMails = $mails->getMails();
 
         require'app/views/Back/mails.php';
     }
+
+    //redirige vers l'action mails ou on applique la fonction deleteMail($id) de ContactManager
     function deleteMail($id){
         $mail = new \Project\Models\ContactManager();
         $deleteMails = $mail->deleteMail($id);
@@ -47,29 +59,39 @@ class BackController{
     }
 
 
-//gestion des jeux
+//gestion des jeux------------------------------------------------------------------------------
+
+    //redirige vers la page gestionjeu ou on applique la fonction getJeuAdmin($id) de JeuManager
     function jeu($id){
         $jeu = new \Project\Models\JeuManager();
         $getJeuAdmin = $jeu->getJeuAdmin($id);
        
         require'app/views/Back/gestionjeu.php';
     }
+
+    //redirige vers la page listejeux ou on applique la fonction getJeux() de JeuManager
     function jeuxListe(){
         $jeux = new \Project\Models\JeuManager();
         $allJeux = $jeux->getJeux();
 
         require'app/views/Back/listejeux.php';
     }
+
+    //redirige vers l'action jeuxListe ou on applique la fonction deleteJeux($id) de JeuManager
     function deleteJeu($id){
         $jeu = new \Project\Models\JeuManager();
         $deleteJeux = $jeu->deleteJeux($id);
 
         header('location: indexAdmin.php?action=jeuxListe');
     }
+
+    //redirige vers la page createJeu
     function createJeu(){
        
         require'app/views/Back/createJeu.php';
     }
+
+    //redirige vers l'action jeuxListe ou on applique la fonction newJeu() de JeuManager
     function newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote){
         $jeu = new \Project\Models\JeuManager();
         
@@ -77,6 +99,8 @@ class BackController{
 
         header('location: indexAdmin.php?action=jeuxListe');
     }
+
+    //redirige vers la page jeu ou on applique la fonction getJeuCategorieName($id) de CategorieManager  et la fonction getJeu($id) de JeuManager
     function editionJeu($id){
         $categorie = new \Project\Models\CategorieManager();
         $getCategorie = $categorie->getJeuCategorieName($id);
@@ -86,6 +110,8 @@ class BackController{
 
         require'app/views/Back/jeu.php';
     }
+
+    //redirige vers l'action jeuxListe ou on applique la fonction updateJeu() de JeuManager
     function updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage,$updateAvis,$updateNote){
         $jeu = new \Project\Models\JeuManager();
         $updateJeu = $jeu->updateJeu($id,$updatetitle,$updatecontent,$updatecategorie,$updateimage,$updateAvis,$updateNote);
@@ -94,17 +120,23 @@ class BackController{
     }
 
 
-//gestion des images
+//gestion des images--------------------------------------------------------------------------------
+
+    //redirige vers la page image ou on applique la fonction getImages() de ImageManager
     function images(){
-        $images = new \Project\Models\UserManager();
+        $images = new \Project\Models\ImageManager();
         $allImages = $images->getImages();
 
         require'app/views/Back/image.php';
     }
+
+    //redirige vers la page creatimage
     function image(){
 
         require'app/views/Back/creatimage.php';
     }
+
+    //permet de verifier que l'image televersée est au bon format et a la bonne taille
     function creatimage($title){
         $target_dir = "app/public/front/images/"; //spécifie le répertoire où le fichier va être placé
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
@@ -131,7 +163,7 @@ class BackController{
                     // if everything is ok, try to upload file
                 } else {
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                        $userManager = new \Project\Models\UserManager();
+                        $userManager = new \Project\Models\ImageManager();
                         $uploadImg = $userManager->creatImage($title, $target_file);
                         // var_dump($target_file);
                         header('Location: indexAdmin.php?action=images');

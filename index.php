@@ -5,8 +5,12 @@ require_once __DIR__ .'/vendor/autoload.php';
 
 try{
     $frontController = new \Project\Controllers\Front\FrontController();
-
     if(isset($_GET['action'])){
+
+//les différentes actions récupérées en front:
+
+
+        //gestion des categories
         if($_GET['action']=='categories'){ 
             $frontController->categories();
         }
@@ -19,19 +23,37 @@ try{
             $categorie=$_GET['categorie'];
             $frontController->jeuFiche($id,$categorie);
         }
-        elseif($_GET['action']=='contact'){
-            $frontController->contact();
-        }
+
+        //gestion des commentaires
         elseif($_GET['action']=='createCommentaire'){
-            $newIdJeu= $_GET['id'];
-            $frontController->createCommentaire($newIdJeu);
+            $id= $_GET['id'];
+            $frontController->createCommentaire($id);
+        }
+        elseif($_GET['action']=='commentaireEdit'){
+            $frontController->commentaireEdit();
         }
         elseif($_GET['action']=='postCommentaire'){
-            $newIdJeu =$GET['id'];
+            $newIdJeu =$GET['id_jeu'];
             $newPseudo = $_POST['pseudo'];
             $newContent = $_POST['content'];
              
             $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent); 
+        }
+        elseif($_GET['action']=='getCommentaire'){
+            $id= $_GET['id'];
+            $frontController->getCommentaire($id);
+        }
+        elseif($_GET['action']=='commentaires'){
+            $frontController->commentaires();
+        }
+        elseif($_GET['action']=='getAllcommentaires'){
+            $id= $_GET['id'];
+            $frontController->getAllcommentaires($id);
+        }
+
+        //gestion des contacts
+        elseif($_GET['action']=='contact'){
+            $frontController->contact();
         }
         //envoi du mail en bdd
         elseif($_GET['action']=='contactMail'){
