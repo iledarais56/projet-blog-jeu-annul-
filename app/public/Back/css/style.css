@@ -1,0 +1,140 @@
+h1,
+h2,
+h3{
+ text-align: center;
+}
+
+.btnAdmin {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card{
+    border: 1px solid;
+    width: 20%;
+    text-align: center;
+    padding: 15px;
+}
+
+.card_gestion{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.article{
+    width: 20%;
+    border: 1px solid;
+    min-height: 451px;
+    border-radius: 5px;
+    box-shadow:2px 2px 5px black;
+    background-color: azure;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.all-articles{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.article p{
+    padding: 10px;
+}
+.image-container{
+    text-align:center;
+  }
+.image-container img{
+    width:50%;
+  }
+.form_article{
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    width: 50%;
+}
+
+.btn-secondary{
+    width: 10%;
+    padding: 10px;
+}
+
+.text_content{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.article_title{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+    margin: auto;
+}
+.subBtn{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.infos_admin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.submit-btnValider{
+    margin-top: 25px;
+}
+
+.input_infos{
+    width: 20%;
+    margin: auto;
+}
+
+.btn_infos,
+.newNameAdmin h3{
+    text-align: center;
+}
+
+.createPresta{
+    margin-top: 55px;
+    text-align: center;
+}
+
+.createPresta a,
+.btn_edit,
+.btn_delet{
+    border: 1px solid;
+    padding: 10px;
+    text-decoration: none;
+}
+.btn_edit:hover,
+.createPresta a:hover{
+    background: black;
+    color: #fff;
+    
+}
+
+.btn_delet:hover{
+    background: red;
+    color: #fff;
+}
+
+.btn_gestion{
+    text-align: center;
+}
+
+.card_mail p{
+    margin-top: -31px;
+}
+
+.formImg{
+    text-align: center;
+}
+
+.newImg{
+    margin-top: 50px
+}

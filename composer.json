@@ -1,0 +1,15 @@
+{
+    "name": "kercode/jeuxblog",
+    "authors": [
+        {
+            "name": "Olivier Bessuand",
+            "email": "bessuand.o@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Project\\" : "./app"
+        }
+    },
+    "require": {}
+}
