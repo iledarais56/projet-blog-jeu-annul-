@@ -17,13 +17,23 @@ li{
     padding: 10px;
 }
 header{
-  background-color:#D5CAD6;
+  background-color:#6B5E62;
+}
+header a{
+  color:white;
+
+}
+header a:hover{
+  color:#D5CAD6;
+
 }
 main{
   background-color: #EFEFF0;
 }
-.article{
+
+.article,.bloc{
     width: 20%;
+    margin-top:10px;
     border: 5px solid #D5CAD6;
     background-color: #D5CAD6;
     color:#6B5E62;
@@ -32,6 +42,18 @@ main{
     -moz-border-radius:10px;
     -ms-border-radius:10px;
     -o-border-radius:10px;
+}
+.commentairebloc{
+  margin:20px;
+  padding:10px;
+  border: 5px solid #D5CAD6;
+  background-color: #D5CAD6;
+  color:#6B5E62;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px;
 }
 .categorie{
   width:250px;
@@ -48,14 +70,20 @@ main{
   margin-left:50px;
 }
 .article:hover{
-    box-shadow:2px 2px 5px black;
-
+    /* box-shadow:2px 2px 5px black; */
+    background-color:#6B5E62;
+    color:#D5CAD6;
 }
 .all-articles{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
+.articles{
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
 .article p{
     padding: 10px;
 }

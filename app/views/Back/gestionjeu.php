@@ -25,6 +25,11 @@
                         <div class="btn_gestion">    
                             <a class="btn_delet" href="indexAdmin.php?action=editionJeu&id=<?=$jeu['id'] ?>">Editer ce jeu</a>
                         </div>
+                        <br>
+                        <br>
+                        <div class="btn_gestion">    
+                            <a class="btn_delet" href="indexAdmin.php?action=commentaires&id=<?=$jeu['id'] ?>">gerer les commentaires de ce jeu</a>
+                        </div>
                     </div>
                 </div>
         </div>

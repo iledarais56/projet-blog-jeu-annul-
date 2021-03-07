@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-
 <?php $jeu =$getJeuFiche->fetch(); ?>
 <?php  $commentaire = $getCommentaires->fetch(); ?>
 <section>
@@ -9,16 +8,16 @@
             <img src="app/public/Front/images/<?= $jeu['img'] ?>.jpg" alt="<?=  htmlspecialchars($jeu['title']) ?>"style="width:40%" ><br>
             <br><br>
             <div class="description">
-                <h3>description: </h3>
+                <h3>Description: </h3>
                 <p><?=  htmlspecialchars($jeu['content']) ?></p>
                 <br>
                 <div class="all-articles">
-                    <div class="article">
+                    <div class="bloc">
                         <h3>Ma note :</h3>
                         <br>
                         <h3><?=  htmlspecialchars($jeu['note']) ?>/20</h3>
                     </div>
-                    <div class="article">
+                    <div class="bloc">
                         <h3>Mon avis :</h3>
                         <br>
                         <p><?=  htmlspecialchars($jeu['avis']) ?></p>
@@ -33,26 +32,26 @@
                     <br>
                     <div class="all-articles">
                         <?php foreach($getCommentaires as $commentaire){ ?>
-                            
-                            <div class="article">
-                                <a href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
+                                                       
+                                <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
                                 <p>posté par: <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
                                 <br>
                                 <p><?=  htmlspecialchars($commentaire['content']) ?></p>
                                 </a>
-                            </div>
                             <br>
 
                         <?php } ?>
                         <br>
-                    </div><br><br>
+                    </div>
+                    <br>
+                    <br>
                     <div class="all-articles" >
-                    <div >
-                        <a class="btn " href="index.php?action=createCommentaire&id=<?=$jeu['id'] ?>">poster un commentaire</a>
-                    </div>
-                    <div >
-                        <a class="btn " href="index.php?action=getAllcommentaires&id=<?=$jeu['id'] ?>">voir tous les commentaires</a>
-                    </div>
+                        <div >
+                            <a class="btn " href="index.php?action=createCommentaire&id=<?=$jeu['id'] ?>">poster un commentaire</a>
+                        </div>
+                        <div >
+                            <a class="btn " href="index.php?action=getAllcommentaires&id=<?=$jeu['id'] ?>">voir tous les commentaires</a>
+                        </div>
                    </div> 
                 </div>
         <br><br>

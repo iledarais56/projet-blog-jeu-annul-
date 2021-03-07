@@ -1,18 +1,21 @@
 <?php ob_start(); ?>
 
-
 <section>
 <div class="newImg">
         <h2>Votre commentaire sur le jeu </h2>
-        <form action="index.php?action=postCommentaire&id_jeu=<?=$jeu['id'] ?>" method="post">
+        <form action="index.php?action=postCommentaire&id_jeu=<?php echo $id_jeu ?>" method="post">
 
             <div class="article_title">
                 <label for="pseudo">Votre pseudo</label>
                 <input type="text" id="pseudo" name="pseudo">
             </div>
             <div class="article_title">
-                <label for="pseudo">Votre commentaire</label>
+                <label for="content">Résumé de votre commentaire</label>
                 <textarea  id="content" name="content"></textarea>
+            </div>
+            <div class="article_title">
+                <label for="totalContent">Votre commentaire</label>
+                <textarea  id="totalContent" name="totalContent"></textarea>
             </div>
             <div class="sub_btn">
                 <input type="submit" value="poster votre commentaire" name="submit"  class="submit">

@@ -35,7 +35,7 @@ class JeuManager extends Manager{
         return $req;
     }
 
-    //affiche le jeu a l'id =$idet a la categorie =$categorie
+    //affiche le jeu a l'id =$id et a la categorie =$categorie
     public function getJeuFiche($id,$categorie){
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('SELECT *FROM jeux WHERE id=? AND categorie=?');
@@ -65,6 +65,14 @@ class JeuManager extends Manager{
         $req->execute(array($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote));
         return $req;    
         
+    }
+
+    //affiche le nom du jeu a l'id =$id
+    public function getJeuName($id){
+        $bdd = $this->bdConnect();
+        $req = $bdd->prepare('SELECT title FROM jeux WHERE id=?');
+        $req->execute(array($id));
+        return $req;
     }
     
 }

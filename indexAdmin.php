@@ -88,6 +88,15 @@ try{
             $backController->newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote); 
            
         }
+        elseif($_GET['action']=='commentaires'){
+            $id_jeu = $_GET['id'];
+            $backController->getAllcommentaires($id_jeu); 
+        }
+        elseif($_GET['action']=='deletecommentaire'){
+            $id = $_GET['id'];
+            $backController->deletecommentaire($id); 
+        }
+        
 
         //gestion des images
         elseif($_GET['action']=='images'){

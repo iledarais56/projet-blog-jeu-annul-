@@ -118,6 +118,23 @@ class BackController{
 
         header('location: indexAdmin.php?action=jeuxListe');
     }
+    //recupere tous les commentaires sur le jeu dont l'id=$id_jeu et le nom du jeu
+    function getAllcommentaires($id_jeu){
+        $name =new \Project\Models\JeuManager();
+        $getJeuCategorieName = $name->getJeuName($id_jeu);
+        $commentaire = new \Project\Models\CommentaireManager();
+        $getAllcommentaires = $commentaire->getAllcommentaires($id_jeu);
+
+        require'app/views/Back/commentaires.php';
+    }
+    //redirige vers l'action  ou on applique la fonction deleteJeux($id) de JeuManager
+    function deletecommentaire($id){
+        $jeu = new \Project\Models\CommentaireManager();
+        $deletecommentaire = $jeu->deletecommentaire($id);
+       
+
+        header('location: indexAdmin.php?action=commentaires');
+    }
 
 
 //gestion des images--------------------------------------------------------------------------------

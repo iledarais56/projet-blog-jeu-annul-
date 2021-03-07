@@ -40,28 +40,28 @@ class FrontController{
 
 //commentaire--------------------------------------------------------------
 
-    //redirige vers  l'action commentaireEdit ou on applique la fonction createCommentaire($id) de CommentaireManager
-    function createCommentaire($id){
-        $commentaire = new \Project\Models\CommentaireManager();
-        $createCommentaire = $commentaire->createCommentaire($id);
-        
-        header('location: index.php?action=commentaireEdit');
+    //redirige vers  la page commentaire
+    function createCommentaire($id_jeu){
+    
+        require'app/views/Front/commentaire.php';
     }
 
-    //redirige vers  l'action commentaires ou on applique la fonction getCommentaire($id) de CommentaireManager
+    //redirige vers  la page commentaireFiche ou on applique la fonction getCommentaire($id) de CommentaireManager
     function getCommentaire($id){
         
         $commentaire = new \Project\Models\CommentaireManager();
         $getCommentaire = $commentaire->getCommentaire($id);
-        header('location: index.php?action=commentaire');
+        require'app/views/Front/commentaireFiche.php';
     }
 
     //redirige vers  l'action commentaires ou on applique la fonction getAllcommentaires($id) de CommentaireManager
-    function getAllcommentaires($id){
-        
+    function getAllcommentaires($id_jeu){
+        $name =new \Project\Models\JeuManager();
+        $getJeuCategorieName = $name->getJeuName($id_jeu);
         $commentaire = new \Project\Models\CommentaireManager();
-        $Commentaires = $commentaire->getAllcommentaires($id);
-        header('location: index.php?action=commentaires');
+        $getAllcommentaires = $commentaire->getAllcommentaires($id_jeu);
+        
+        require'app/views/Front/commentaires.php';
     }
 
     //pour aller sur la page commentaires
@@ -69,18 +69,13 @@ class FrontController{
         require'app/views/Front/commentaires.php';
     }
 
-    //pour aller sur la page commentaire
-    function commentaireEdit(){
-        require'app/views/Front/commentaire.php';
-    }
 
     //redirige vers  l'action jeuxFiche ou on applique la fonction newCommentaire($newIdJeu,$newPseudo,$newContent) de CommentaireManager
-    function newCommentaire($newIdJeu,$newPseudo,$newContent){
+    function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent){
         $commentaire = new \Project\Models\CommentaireManager();
+        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent);
 
-        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent);
-
-        header('location: index.php?action=jeuxFiche');
+        header('location: index.php?action=Commentairefait');
     }
 
     //redirige vers  la page commentaire ou on applique la fonction getCommentaire($id) de CommentaireManager
@@ -88,6 +83,15 @@ class FrontController{
         $commentaire = new \Project\Models\CommentaireManager();
         $Commentaires = $commentaire->getCommentaire($id);
         require'app/views/Front/commentaire.php';
+    }
+    function retourJeu($id){
+        $commentaire = new \Project\Models\CommentaireManager();
+        $retourJeu = $commentaire->retourJeu($id);
+        header('location: index.php?action=retourJeuFiche');
+    }
+    //pour retourner sur la page du jeu
+    function Commentairefait(){
+        require'app/views/Front/accueil.php';
     }
 
 // envoi de mail--------------------------------------------------------------
