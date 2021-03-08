@@ -21,7 +21,7 @@
         <br>
         <div class="all-articles" >
             <div >
-                <a class="btn " href="index.php?action=retourJeu&id=<?=$commentaire['id_jeu'] ?>">retour au jeu</a>
+                <a class="btn " href="index.php?action=jeuFiche&id=<?=$commentaire['id_jeu'] ?>&categorie=<?=$commentaire['categorieJeu'] ?>">retour au jeu</a>
             </div>
                        
         </div> 

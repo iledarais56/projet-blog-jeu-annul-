@@ -26,23 +26,24 @@ try{
 
         //gestion des commentaires
         elseif($_GET['action']=='createCommentaire'){
+            $title =$_GET['title'];
+            $categorie =$_GET['categorie'];
             $id_jeu= $_GET['id'];
-            $frontController->createCommentaire($id_jeu);
+            $frontController->createCommentaire($id_jeu,$categorie,$title);
         }
         elseif($_GET['action']=='postCommentaire'){
+            $id =$_GET['id_jeu'];
+            $categorie =$_GET['categorie'];
             $newIdJeu =$_GET['id_jeu'];
             $newPseudo = $_POST['pseudo'];
             $newContent = $_POST['content'];
             $newTotalContent = $_POST['totalContent'];
-             
-            $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent); 
+             var_dump($categorie);
+            $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id); 
         }
         elseif($_GET['action']=='getCommentaire'){
             $id= $_GET['id'];
             $frontController->getCommentaire($id);
-        }
-        elseif($_GET['action']=='Commentairefait'){
-            $frontController->Commentairefait();
         }
         elseif($_GET['action']=='commentaires'){
             $frontController->commentaires();
@@ -51,14 +52,8 @@ try{
             $id_jeu= $_GET['id'];
             $frontController->getAllcommentaires($id_jeu);
         }
-        elseif($_GET['action']=='retourJeu'){
-            $frontController->retourJeu($id);
-        }
-        if($_GET['action']=='retourJeuFiche'){
-            $id= $_GET['id_jeu'];
-            $categorie=$_GET['categorie'];
-            $frontController->jeuFiche($id,$categorie);
-        }
+        
+
         //gestion des contacts
         elseif($_GET['action']=='contact'){
             $frontController->contact();

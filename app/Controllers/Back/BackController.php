@@ -132,8 +132,7 @@ class BackController{
         $jeu = new \Project\Models\CommentaireManager();
         $deletecommentaire = $jeu->deletecommentaire($id);
        
-
-        header('location: indexAdmin.php?action=commentaires');
+        require'app/views/Back/tableauDeBord.php';
     }
 
 

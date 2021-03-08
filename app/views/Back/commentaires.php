@@ -19,7 +19,7 @@
                             <p>Contenu: <br><?=  htmlspecialchars($commentaire['totalContent']) ?></p>
                         </div>
                         <div class="btn_gestion">
-                            <a class="btn_delet" href="indexAdmin.php?action=deletecommentaire&id=<?=$commentaire['id'] ?>&id_jeu=<?=$commentaire['id_jeu'] ?>">Supprimer ce commentaire</a>
+                            <a class="btn_delet" href="indexAdmin.php?action=deletecommentaire&id=<?=$commentaire['id'] ?>">Supprimer ce commentaire</a>
                         </div>
                         <br><br>
                     </div>

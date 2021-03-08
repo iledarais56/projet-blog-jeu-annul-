@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+
 <?php $jeu =$getJeuFiche->fetch(); ?>
 <?php  $commentaire = $getCommentaires->fetch(); ?>
 <section>
@@ -27,34 +28,35 @@
                 <br> 
             </div>   
         </div>
-          <div>
-                    <h3>Derniers commentaires sur ce jeu:</h3>
-                    <br>
-                    <div class="all-articles">
-                        <?php foreach($getCommentaires as $commentaire){ ?>
-                                                       
-                                <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
-                                <p>posté par: <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
-                                <br>
-                                <p><?=  htmlspecialchars($commentaire['content']) ?></p>
-                                </a>
-                            <br>
-
-                        <?php } ?>
+        <div>
+            <h3>Derniers commentaires sur ce jeu:</h3>
+            <br>
+            <div class="all-articles">
+                <?php foreach($getCommentaires as $commentaire){ ?>
+                                                
+                        <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
+                        <p>posté par: <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
                         <br>
-                    </div>
+                        <p><?=  htmlspecialchars($commentaire['content']) ?></p>
+                        </a>
                     <br>
-                    <br>
-                    <div class="all-articles" >
-                        <div >
-                            <a class="btn " href="index.php?action=createCommentaire&id=<?=$jeu['id'] ?>">poster un commentaire</a>
-                        </div>
-                        <div >
-                            <a class="btn " href="index.php?action=getAllcommentaires&id=<?=$jeu['id'] ?>">voir tous les commentaires</a>
-                        </div>
-                   </div> 
+
+                <?php } ?>
+                <br>
+            </div>
+            <br>
+            <br>
+            <div class="all-articles" >
+                <div >
+                    <a class="btn " href="index.php?action=createCommentaire&id=<?=$jeu['id'] ?>&categorie=<?=$jeu['categorie'] ?>&title=<?=  htmlspecialchars($jeu['title']) ?>">poster un commentaire</a>
                 </div>
-        <br><br>
+                <div >
+                    <a class="btn " href="index.php?action=getAllcommentaires&id=<?=$jeu['id'] ?>&categorie=<?=$jeu['categorie'] ?>">voir tous les commentaires</a>
+                </div>
+            </div> 
+        </div>
+        <br>
+        <br>
             
     
 </section>

@@ -89,7 +89,11 @@ try{
            
         }
         elseif($_GET['action']=='commentaires'){
-            $id_jeu = $_GET['id'];
+            $id_jeu = $_GET['id_jeu'];
+            $backController->getAllcommentaires($id_jeu); 
+        }
+        elseif($_GET['action']=='retourCommentaires'){
+            $id_jeu = $_GET['id_jeu'];
             $backController->getAllcommentaires($id_jeu); 
         }
         elseif($_GET['action']=='deletecommentaire'){

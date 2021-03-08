@@ -5,17 +5,17 @@ class CommentaireManager extends Manager{
     //les requetes liées aux commentaires
 
     //injecte un nouveau commentaire dans la table commentaires
-    public function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent){
+    public function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('INSERT INTO commentaires(id_jeu,pseudo,content,totalContent)VALUE(?,?,?,?)');
-        $req->execute(array($newIdJeu,$newPseudo,$newContent,$newTotalContent));
+        $req->execute(array($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id));
         return $req; 
     }
 
     //affiche tout  de la table commentaires ou l'id =  $id
     public function getCommentaire($id){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('SELECT *,(SELECT  `title` FROM `jeux` WHERE `id`=`id_jeu`)AS titreJeu FROM `commentaires` WHERE `id`=?');
+        $req = $bdd->prepare('SELECT *,(SELECT  `title` FROM `jeux` WHERE `id`=`id_jeu`)AS titreJeu,(SELECT `categorie` FROM `jeux` WHERE `id`=`id_jeu`)AS categorieJeu FROM `commentaires` WHERE `id`=?');
         $req->execute(array($id));
         return $req;
     }
@@ -31,7 +31,7 @@ class CommentaireManager extends Manager{
     //affiche tout  de la table commentaires ou l'id_jeu =  $id rangé par ordre decroissant 
     public function getAllcommentaires($id_jeu){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('SELECT *FROM commentaires WHERE id_jeu=? ORDER BY id DESC ');
+        $req = $bdd->prepare('SELECT *,(SELECT `categorie` FROM `jeux` WHERE `id`=`id_jeu`)AS categorieJeu FROM commentaires WHERE id_jeu=? ORDER BY id DESC ');
         $req->execute(array($id_jeu));
         return $req;
     }
@@ -48,13 +48,9 @@ class CommentaireManager extends Manager{
     public function deletecommentaire($id){
         
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('DELETE * FROM commentaires WHERE id=?');
+        $req = $bdd->prepare('DELETE FROM commentaires WHERE id=?');
         $req->execute(array($id));
     }
-    public function retourJeu($id){
-        $bdd = $this->bdConnect();
-        $req = $bdd->prepare('SELECT id_jeu AS id,(SELECT categorie FROM jeux WHERE id=id_jeu)AS categorie FROM commentaires WHERE id=?');
-        $req->execute(array($id));
-    }
+   
     
 }

@@ -41,7 +41,7 @@ class FrontController{
 //commentaire--------------------------------------------------------------
 
     //redirige vers  la page commentaire
-    function createCommentaire($id_jeu){
+    function createCommentaire($id_jeu,$categorie,$title){
     
         require'app/views/Front/commentaire.php';
     }
@@ -71,11 +71,11 @@ class FrontController{
 
 
     //redirige vers  l'action jeuxFiche ou on applique la fonction newCommentaire($newIdJeu,$newPseudo,$newContent) de CommentaireManager
-    function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent){
+    function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
         $commentaire = new \Project\Models\CommentaireManager();
-        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent);
+        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);
 
-        header('location: index.php?action=Commentairefait');
+        header('location: index.php?action=jeuFiche');
     }
 
     //redirige vers  la page commentaire ou on applique la fonction getCommentaire($id) de CommentaireManager
@@ -84,15 +84,7 @@ class FrontController{
         $Commentaires = $commentaire->getCommentaire($id);
         require'app/views/Front/commentaire.php';
     }
-    function retourJeu($id){
-        $commentaire = new \Project\Models\CommentaireManager();
-        $retourJeu = $commentaire->retourJeu($id);
-        header('location: index.php?action=retourJeuFiche');
-    }
-    //pour retourner sur la page du jeu
-    function Commentairefait(){
-        require'app/views/Front/accueil.php';
-    }
+    
 
 // envoi de mail--------------------------------------------------------------
 
