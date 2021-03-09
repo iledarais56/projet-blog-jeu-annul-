@@ -54,7 +54,7 @@ class FrontController{
         require'app/views/Front/commentaireFiche.php';
     }
 
-    //redirige vers  l'action commentaires ou on applique la fonction getAllcommentaires($id) de CommentaireManager
+    //redirige vers  la page commentaires ou on applique la fonction getAllcommentaires($id) de CommentaireManager et getJeuName de JeuManager
     function getAllcommentaires($id_jeu){
         $name =new \Project\Models\JeuManager();
         $getJeuCategorieName = $name->getJeuName($id_jeu);
@@ -70,12 +70,15 @@ class FrontController{
     }
 
 
-    //redirige vers  l'action jeuxFiche ou on applique la fonction newCommentaire($newIdJeu,$newPseudo,$newContent) de CommentaireManager
+    //redirige vers  la page commentaireFait ou on applique les fonctions newCommentaire et getCommentaire de CommentaireManager
     function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
+        $commentaire = new \Project\Models\CommentaireManager();
+        $getCommentaire = $commentaire->getCommentaire($id);
+
         $commentaire = new \Project\Models\CommentaireManager();
         $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);
 
-        header('location: index.php?action=jeuFiche');
+        require'app/views/Front/commentaireFait.php';
     }
 
     //redirige vers  la page commentaire ou on applique la fonction getCommentaire($id) de CommentaireManager

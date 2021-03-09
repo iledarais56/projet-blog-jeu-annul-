@@ -8,11 +8,11 @@ class CommentaireManager extends Manager{
     public function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('INSERT INTO commentaires(id_jeu,pseudo,content,totalContent)VALUE(?,?,?,?)');
-        $req->execute(array($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id));
+        $req->execute(array($newIdJeu,$newPseudo,$newContent,$newTotalContent));
         return $req; 
     }
 
-    //affiche tout  de la table commentaires ou l'id =  $id
+    //affiche tout  de la table commentaires + le titre(en tant que titreJeu) et la categorie(en tant que categorieJeu) de la table jeux ou id=id_jeu le tout ou l'id =  $id
     public function getCommentaire($id){
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('SELECT *,(SELECT  `title` FROM `jeux` WHERE `id`=`id_jeu`)AS titreJeu,(SELECT `categorie` FROM `jeux` WHERE `id`=`id_jeu`)AS categorieJeu FROM `commentaires` WHERE `id`=?');
@@ -28,7 +28,7 @@ class CommentaireManager extends Manager{
         return $req;
     }
 
-    //affiche tout  de la table commentaires ou l'id_jeu =  $id rangé par ordre decroissant 
+    //affiche tout  de la table commentaires et la categorie(en tant que categorieJeu) de la table jeux ou id=id_jeu le tout ou l'id_jeu =  $id rangé par ordre decroissant 
     public function getAllcommentaires($id_jeu){
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('SELECT *,(SELECT `categorie` FROM `jeux` WHERE `id`=`id_jeu`)AS categorieJeu FROM commentaires WHERE id_jeu=? ORDER BY id DESC ');
