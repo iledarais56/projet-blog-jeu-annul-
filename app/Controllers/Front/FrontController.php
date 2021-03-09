@@ -20,6 +20,7 @@ class FrontController{
 
     //redirige vers  la page categorie ou on applique la fonction getJeu($id) de jeuManager
     function categorie($id){
+
         $jeu = new \Project\Models\jeuManager();
         $jeux = $jeu->getJeu($id);
 
@@ -70,7 +71,7 @@ class FrontController{
     }
 
 
-    //redirige vers  la page commentaireFait ou on applique les fonctions newCommentaire et getCommentaire de CommentaireManager
+    //redirige vers  la page commentaireFait ou on applique les fonctions newCommentaire de CommentaireManager et getJeuAdmin de jeuManager
     function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
         $commentaire = new \Project\Models\jeuManager();
         $getJeuAdmin = $commentaire->getJeuAdmin($id);

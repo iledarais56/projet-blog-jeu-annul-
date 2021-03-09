@@ -10,11 +10,15 @@
                 <?php foreach($getAllcommentaires as $commentaire){ ?>
                    
                     
-                        <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
-                        <p>posté par: <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
-                        <br>
-                        <p><?=  htmlspecialchars($commentaire['content']) ?></p>
-                        </a>
+                    <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
+                        <div style="display:flex" >
+                            <p class="soulign">Posté par:</p><p> <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
+                        </div>
+                        <div style="display:flex" >
+                            <p class="soulign">Résumé: </p><p> <?=  htmlspecialchars($commentaire['content']) ?></p>
+                        </div>
+                        <p>Cliquez pour voir l'avis complet.</p>
+                    </a>
                     
                     <br>
 

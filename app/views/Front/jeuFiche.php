@@ -5,21 +5,23 @@
 <section>
     
         <h1><?= $jeu['title']?></h1> <br><br>
-        <div class="image-container"style="display:flex">
-            <img src="app/public/Front/images/<?= $jeu['img'] ?>.jpg" alt="<?=  htmlspecialchars($jeu['title']) ?>"style="width:40%" ><br>
+        <div class="descriptionjeu">
+            <div class="image">
+                <img src="app/public/Front/images/<?= $jeu['img'] ?>.jpg" alt="<?=  htmlspecialchars($jeu['title']) ?>" ><br>
+            </div>    
             <br><br>
             <div class="description">
-                <h3>Description: </h3>
+                <h3 class="soulign">Description: </h3>
                 <p><?=  htmlspecialchars($jeu['content']) ?></p>
                 <br>
                 <div class="all-articles">
                     <div class="bloc">
-                        <h3>Ma note :</h3>
+                        <h3 class="soulign">Ma note :</h3>
                         <br>
                         <h3><?=  htmlspecialchars($jeu['note']) ?>/20</h3>
                     </div>
                     <div class="bloc">
-                        <h3>Mon avis :</h3>
+                        <h3 class="soulign">Mon avis :</h3>
                         <br>
                         <p><?=  htmlspecialchars($jeu['avis']) ?></p>
                         <br>
@@ -27,17 +29,22 @@
                 </div>
                 <br> 
             </div>   
+            
         </div>
         <div>
-            <h3>Derniers commentaires sur ce jeu:</h3>
+            <h3 class="soulign">Derniers commentaires sur ce jeu:</h3>
             <br>
             <div class="all-articles">
                 <?php foreach($getCommentaires as $commentaire){ ?>
                                                 
                         <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
-                        <p>posté par: <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
-                        <br>
-                        <p><?=  htmlspecialchars($commentaire['content']) ?></p>
+                        <div style="display:flex" >
+                            <p class="soulign">Posté par:</p><p> <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
+                        </div>
+                        <div style="display:flex" >
+                            <p class="soulign">Résumé: </p><p> <?=  htmlspecialchars($commentaire['content']) ?></p>
+                        </div>
+                        <p>Cliquez pour voir l'avis complet.</p>
                         </a>
                     <br>
 
