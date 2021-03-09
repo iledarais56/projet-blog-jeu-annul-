@@ -1,14 +1,14 @@
 <?php ob_start(); ?>
 
-<?php  $commentaire = $getCommentaire->fetch(); ?>
+<?php  $jeu = $getJeuAdmin->fetch(); ?>
 <section>
     
-    <p> votre commentaire sur le jeu <?php echo $commentaire['titreJeu'] ?> a été ajouté avec succès !</p>
+    <p> votre commentaire sur le jeu <?php echo $jeu['title'] ?> a été ajouté avec succès !</p>
     <br>
         
     <div class="all-articles" >
         <div >
-            <a class="btn " href="index.php?action=jeuFiche&id=<?=$commentaire['id_jeu'] ?>&categorie=<?=$commentaire['categorieJeu'] ?>">retour au jeu</a>
+            <a class="btn " href="index.php?action=jeuFiche&id=<?=$jeu['id'] ?>&categorie=<?=$jeu['categorie'] ?>">retour au jeu</a>
         </div>
                     
     </div> 

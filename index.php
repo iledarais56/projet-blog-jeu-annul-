@@ -38,7 +38,6 @@ try{
             $newPseudo = $_POST['pseudo'];
             $newContent = $_POST['content'];
             $newTotalContent = $_POST['totalContent'];
-             var_dump($categorie);
             $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id); 
         }
         elseif($_GET['action']=='getCommentaire'){
