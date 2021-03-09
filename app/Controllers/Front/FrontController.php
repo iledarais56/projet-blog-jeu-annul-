@@ -73,7 +73,7 @@ class FrontController{
     //redirige vers  la page commentaireFait ou on applique les fonctions newCommentaire et getCommentaire de CommentaireManager
     function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
         $commentaire = new \Project\Models\CommentaireManager();
-        $getCommentaire = $commentaire->getCommentaire($id);
+        $getCommentaire = $commentaire->getCommentaire($newIdJeu);
 
         $commentaire = new \Project\Models\CommentaireManager();
         $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);
