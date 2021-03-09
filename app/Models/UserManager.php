@@ -14,7 +14,7 @@ class UserManager extends Manager{
         return $user;
     }
 
-    //recupere tous dans la table utilisateur  ou mail=$mail
+    //recupere tout dans la table utilisateur  ou mail=$mail
     public function recupMdp($mail,$mdp){
         $bdd = $this->bdConnect();
         $req =$bdd->prepare('SELECT *FROM utilisateurs WHERE mail =? ');

@@ -106,7 +106,7 @@ class BackController{
         $getCategorie = $categorie->getJeuCategorieName($id);
 
         $jeu = new \Project\Models\JeuManager();
-        $getJeu = $jeu->getJeu($id);
+        $getJeu = $jeu->getJeuAdmin($id);
 
         require'app/views/Back/jeu.php';
     }

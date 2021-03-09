@@ -1,5 +1,5 @@
 Regler probleme poster commentaire:
--retour sur jeu fiche apres commentaireFait ->pas sur le bon jeu
--le nom du commentaire fait sur le jeu n'st pas le bon
+    -retour sur jeu fiche apres commentaireFait ->pas sur le bon jeu
+    -le nom du commentaire fait sur le jeu n'st pas le bon
 
---> l'id_jeu récupéré est mauvais.
+    --> l'id_jeu récupéré est mauvais.

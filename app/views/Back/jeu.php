@@ -3,7 +3,7 @@
 <?php $categorie = $getCategorie->fetch(); ?>
 <section>
     <div class="article_about">
-        <h2>edition de jeux </h2>
+        <h2>edition du jeu <?= htmlspecialchars($jeu['title']) ?> </h2>
         <div class="all-articles">
             
 
