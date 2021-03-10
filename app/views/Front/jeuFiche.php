@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
 
 <?php $jeu =$getJeuFiche->fetch(); ?>
-<?php  $commentaire = $getCommentaires->fetch(); ?>
+<?php  $commentaires = $getCommentaires->fetchAll(); ?>
 <section>
     
         <h1><?= $jeu['title']?></h1> <br><br>
@@ -28,20 +28,19 @@
                     </div>
                 </div>
                 <br> 
-            </div>   
-            
+            </div>
         </div>
         <div>
             <h3 class="soulign">Derniers commentaires sur ce jeu:</h3>
             <br>
             <div class="all-articles">
-                <?php foreach($getCommentaires as $commentaire){ ?>
+                <?php foreach($commentaires as $commentaire){ ?>
                                                 
                         <a  class="article" href="index.php?action=getCommentaire&id=<?=$commentaire['id'] ?>">
-                        <div style="display:flex" >
+                        <div class="descriptionjeu" >
                             <p class="soulign">Posté par:</p><p> <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
                         </div>
-                        <div style="display:flex" >
+                        <div class="descriptionjeu" >
                             <p class="soulign">Résumé: </p><p> <?=  htmlspecialchars($commentaire['content']) ?></p>
                         </div>
                         <p>Cliquez pour voir l'avis complet.</p>

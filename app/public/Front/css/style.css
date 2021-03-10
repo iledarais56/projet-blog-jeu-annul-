@@ -19,6 +19,9 @@ li{
     list-style: none;
     padding: 10px;
 }
+body{
+  min-height:100%;
+}
 header,footer{
   background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
 }
@@ -54,6 +57,7 @@ main{
 .article,.bloc{
     width: 20%;
     padding:10px;
+    margin:10px;
     background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
     color:black;
     border-radius:10px;
@@ -132,8 +136,20 @@ main{
 #note{
   font-size: 40px;
 }
+.text{
+  font-size: 20px;
+}
 .soulign{
   text-decoration: underline;
+}
+#numero1{
+  color:gold;
+}
+#numero2{
+  color:silver;
+}
+#numero3{
+  color: #614e1a;
 }
 .image_php{
     text-align: center;

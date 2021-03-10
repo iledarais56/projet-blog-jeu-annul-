@@ -56,7 +56,13 @@ try{
         elseif($_GET['action']=='mentions'){
             $frontController->mentions();
         }
-
+        
+        //gestion des tops
+        elseif($_GET['action']=='top'){
+            $frontController->top();
+        }
+        
+        
         //gestion des contacts
         elseif($_GET['action']=='contact'){
             $frontController->contact();

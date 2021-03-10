@@ -23,6 +23,11 @@
         <a href="">Gérer les administrateurs</a>
     </div>
 
+    <div class="card">
+        <h3>Mon top</h3>
+        <a href="indexAdmin.php?action=top">Gérer mon top</a>
+    </div>
+
 </section>
 
 <?php $content = ob_get_clean(); ?><!--fonction PHP pour injecter le template  -->

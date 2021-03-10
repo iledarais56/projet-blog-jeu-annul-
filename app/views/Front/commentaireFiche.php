@@ -7,15 +7,15 @@
         <br>
         <div class="articles">
             <div class="commentairebloc">
-                <p>posté par:<strong> <?=  htmlspecialchars($commentaire['pseudo']) ?></strong></p>
-                <br><br>
-                <p>Impression générale: <br>" <strong><?=  htmlspecialchars($commentaire['content']) ?></strong> " </p>
+                <p class="text">posté par:  &nbsp <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
+                
+                <p class="text">Impression générale: <br><br>" <?=  htmlspecialchars($commentaire['content']) ?> " </p>
             </div>
             <br>
             <br>
         </div> 
         <div class="commentairebloc">
-            <p><?=  htmlspecialchars($commentaire['totalContent']) ?></p>
+            <p>&nbsp &nbsp<?=  htmlspecialchars($commentaire['totalContent']) ?></p>
         </div>
         <br>
         <br>

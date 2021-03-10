@@ -2,6 +2,7 @@
 <?php  $categorie = $CategorieName->fetch(); ?>
 <section>
      <h1>Les différents jeux  <?= htmlspecialchars($categorie['title']) ?> </h1> 
+     <p class="text"><?= htmlspecialchars($categorie['content']) ?></p>
     <div class="article_about">
         
         <div class="all-articles">

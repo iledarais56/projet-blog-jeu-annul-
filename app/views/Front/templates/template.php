@@ -14,6 +14,7 @@
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="index.php?action=categories">Les jeux</a></li>
+                        <li><a href="index.php?action=top">Mes tops</a></li>
                         <li><a href="index.php?action=contact">Contact</a></li>
                     </ul>
                 </nav>

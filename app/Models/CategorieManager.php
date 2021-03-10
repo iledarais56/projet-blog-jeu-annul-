@@ -29,11 +29,5 @@ class CategorieManager extends Manager{
         return $req;
     }
 
-    //recupere le nom de la categorie
-    public function getCategorieName($id){
-        $bdd = $this->bdConnect();
-        $req = $bdd->prepare('SELECT title FROM categories  WHERE id=?');
-        $req->execute(array($id));
-        return $req;
-    }
+    
 }

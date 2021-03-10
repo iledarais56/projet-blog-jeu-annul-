@@ -136,6 +136,28 @@ class BackController{
     }
 
 
+    //gestion du top--------------------------------------------------------------------------------
+
+    //redirige vers la page image ou on applique la fonction getImages() de ImageManager
+    function top(){
+        $jeu = new \Project\Models\jeuManager();
+        $jeux = $jeu->getJeux();
+
+        $top = new \Project\Models\TopManager();
+        $tops = $top->getJeuFromTop();
+
+        require'app/views/Back/top.php';
+    }
+    function editTop(){
+        $top = new \Project\Models\TopManager();
+        $editTop = $top->updateTop();
+
+        $top = new \Project\Models\TopManager();
+        $tops = $top->getJeuFromTop();
+
+        require'app/views/Back/top.php';
+    }
+
 //gestion des images--------------------------------------------------------------------------------
 
     //redirige vers la page image ou on applique la fonction getImages() de ImageManager

@@ -1,7 +1,17 @@
--l'affichage du dernier commentaire ne se fait pas sur jeuFiche ni sur commentaires cela commence à l'avant dernier.
+
 
 -Ameliorer le style:
     -Front
     -Back
 
 -relier table image a editionjeu et a jeu pour inserer les images directement a partir de l'edition sans recuperer les infos a partir du dossier images
+
+
+-finir admin top :
+    -affichage du choix de tous les jeux sur select du jeu 2 et du jeu 3
+    -recuperation des données du top pour l'updater sur la table.
+
+-possibilitée de mettre une note dans les commentaires postés
+ pour faire moyenne des avis.
+
+-peut etre relier a une api (board game atlas )pour charger les images

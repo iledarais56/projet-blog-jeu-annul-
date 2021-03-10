@@ -2,7 +2,7 @@
 
 namespace Project\Controllers\Front;
 
-class FrontController{
+class FrontController {
 
     //pour aller sur la page accueil
     function accueil(){
@@ -21,7 +21,7 @@ class FrontController{
     //redirige vers  la page categorie ou on applique la fonction getJeu($id) de jeuManager
     function categorie($id){
         $categorie = new \Project\Models\CategorieManager();
-        $CategorieName = $categorie->getCategorieName($id);
+        $CategorieName = $categorie->getCategorie($id);
 
         $jeu = new \Project\Models\jeuManager();
         $jeux = $jeu->getJeu($id);
@@ -38,8 +38,20 @@ class FrontController{
         $commentaire = new \Project\Models\CommentaireManager();
         $getCommentaires =$commentaire->getCommentaires($id);
 
+      
+
         require'app/views/Front/jeuFiche.php';
     }
+//top--------------------------------------------------------------   
+
+    //redirige vers  la page top ou on applique la fonction getTop() de TopManager
+    function top(){
+        $top = new \Project\Models\TopManager();
+        $tops = $top->getJeuFromTop();
+
+        require'app/views/Front/top.php';
+    }  
+    
 
 //commentaires--------------------------------------------------------------
 

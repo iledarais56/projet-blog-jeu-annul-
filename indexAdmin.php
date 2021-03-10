@@ -100,7 +100,14 @@ try{
             $id = $_GET['id'];
             $backController->deletecommentaire($id); 
         }
-        
+
+        //gestion du top
+        elseif($_GET['action']=='top'){
+            $backController->top(); 
+        }
+        elseif($_GET['action']=='editionTop'){
+            $backController->editTop(); 
+        }
 
         //gestion des images
         elseif($_GET['action']=='images'){

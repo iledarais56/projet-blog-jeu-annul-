@@ -21,9 +21,9 @@ class CommentaireManager extends Manager{
     }
 
     //affiche tout  de la table commentaires ou l'id_jeu =  $id rangé par ordre decroissant dans une limite de 4 commentaires
-    public function getcommentaires($id){
+    public function getCommentaires($id){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('SELECT *FROM commentaires WHERE id_jeu=? ORDER BY id DESC LIMIT 4');
+        $req = $bdd->prepare('SELECT *FROM commentaires WHERE id_jeu=? ORDER BY id DESC limit 4');
         $req->execute(array($id));
         return $req;
     }
