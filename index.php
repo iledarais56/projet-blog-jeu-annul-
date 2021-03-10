@@ -32,6 +32,7 @@ try{
             $frontController->createCommentaire($id_jeu,$categorie,$title);
         }
         elseif($_GET['action']=='postCommentaire'){
+            
             $id =$_GET['id_jeu'];
             $categorie =$_GET['categorie'];
             $newIdJeu =$_GET['id_jeu'];
@@ -51,7 +52,9 @@ try{
             $id_jeu= $_GET['id'];
             $frontController->getAllcommentaires($id_jeu);
         }
-        
+        elseif($_GET['action']=='mentions'){
+            $frontController->mentions();
+        }
 
         //gestion des contacts
         elseif($_GET['action']=='contact'){

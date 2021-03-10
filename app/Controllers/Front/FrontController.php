@@ -81,7 +81,7 @@ class FrontController{
 
         require'app/views/Front/commentaireFait.php';
     }
-
+   
     //redirige vers  la page commentaire ou on applique la fonction getCommentaire($id) de CommentaireManager
     function commentaire($id){
         $commentaire = new \Project\Models\CommentaireManager();
@@ -108,6 +108,10 @@ class FrontController{
         }else{//redirige vers  la page error
             header('Location: app/views/Front/error.php');
         }
+    }
+    //pour aller sur la page mentions légales
+    function mentions(){
+        require'app/views/Front/mentions.php';
     }
 
 }

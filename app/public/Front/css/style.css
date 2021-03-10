@@ -1,5 +1,5 @@
 h1,
-h3,h2{
+h3,h2,.text{
     text-align: center;
 }
 h1{
@@ -20,7 +20,6 @@ li{
     padding: 10px;
 }
 header,footer{
-  /* background-color:#6B5E62; */
   background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
 }
 header{
@@ -47,7 +46,7 @@ header a:hover,.footer_top a:hover{
   text-shadow:2px 2px 5px black;
 }
 main{
-  background-color: white;
+  background-color: #D5CAD6;
   min-height:350px;
   margin:0 auto;
 }
@@ -55,8 +54,7 @@ main{
 .article,.bloc{
     width: 20%;
     padding:10px;
-    
-  background:linear-gradient(to right top,#2a2929,#D5CAD6);
+    background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
     color:black;
     border-radius:10px;
     -webkit-border-radius:10px;
@@ -67,9 +65,9 @@ main{
 .commentairebloc{
   margin:20px;
   padding:10px;
-  border: 5px solid #D5CAD6;
-  background-color: #D5CAD6;
-  color:#6B5E62;
+  
+  background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
+  color:#D5CAD6;
   border-radius:10px;
   -webkit-border-radius:10px;
   -moz-border-radius:10px;
@@ -88,6 +86,7 @@ main{
 .image-container img{
   width:80%;
   height:80%;
+  border:2px solid #421f1f;
 }
 .image{
   width:30%;
@@ -98,6 +97,7 @@ main{
 .image img{
   width:80%;
   height:80%;
+  border:2px solid #421f1f;
 }
 .descriptionjeu{
   display: flex;
@@ -108,8 +108,7 @@ main{
   margin-left:50px;
 }
 .article:hover{
-    /* box-shadow:2px 2px 5px black; */
-    background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
+    background:linear-gradient(to right top,rgba(168, 149, 152, 0.808),#421f1f);
     color:#D5CAD6;
     box-shadow:1px,1px,10px ,black; 
 }
@@ -117,6 +116,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin:20px;
 }
 .articles{
   display: flex;
@@ -125,6 +125,9 @@ main{
 }
 .article p{
     padding: 10px;
+}
+#note{
+  font-size: 40px;
 }
 .soulign{
   text-decoration: underline;
@@ -161,6 +164,7 @@ input[type=text], textarea, input[type=email] {
   input[type=submit]:hover {
     background-color: #D5CAD6;
     color:black;
+    border:1px solid #421f1f;
   }
   .btn{
     border: 1px solid;

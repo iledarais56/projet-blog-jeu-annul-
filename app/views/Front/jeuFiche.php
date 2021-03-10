@@ -18,7 +18,7 @@
                     <div class="bloc">
                         <h3 class="soulign">Ma note :</h3>
                         <br>
-                        <h3><?=  htmlspecialchars($jeu['note']) ?>/20</h3>
+                        <h3 id="note"><?=  htmlspecialchars($jeu['note']) ?>/20</h3>
                     </div>
                     <div class="bloc">
                         <h3 class="soulign">Mon avis :</h3>

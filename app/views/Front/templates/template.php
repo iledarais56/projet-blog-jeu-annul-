@@ -31,7 +31,7 @@
     <footer>
         <div class="footer_top">
             <p> Tous droits reservés 2021 - MVC -Kercode </p>
-            <a href="">Mentions légales</a>
+            <a href="index.php?action=mentions">Mentions légales</a>
         </div>
         
     </footer>
