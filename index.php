@@ -32,14 +32,15 @@ try{
             $frontController->createCommentaire($id_jeu,$categorie,$title);
         }
         elseif($_GET['action']=='postCommentaire'){
-            
             $id =$_GET['id_jeu'];
             $categorie =$_GET['categorie'];
             $newIdJeu =$_GET['id_jeu'];
             $newPseudo = $_POST['pseudo'];
             $newContent = $_POST['content'];
             $newTotalContent = $_POST['totalContent'];
-            $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id); 
+            if(!empty($newPseudo)&&!empty($newContent)&&!empty($newTotalContent)){
+                $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);}
+            else($frontController->CommentaireVide($id)); 
         }
         elseif($_GET['action']=='getCommentaire'){
             $id= $_GET['id'];

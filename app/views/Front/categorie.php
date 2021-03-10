@@ -1,7 +1,7 @@
 <?php ob_start(); ?>
- 
+<?php  $categorie = $CategorieName->fetch(); ?>
 <section>
-     <h1>Les différents jeux de la catégorie  </h1> 
+     <h1>Les différents jeux  <?= htmlspecialchars($categorie['title']) ?> </h1> 
     <div class="article_about">
         
         <div class="all-articles">

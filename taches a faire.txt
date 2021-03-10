@@ -1,5 +1,7 @@
+-l'affichage du dernier commentaire ne se fait pas sur jeuFiche ni sur commentaires cela commence à l'avant dernier.
 
-
-Ameliorer le style:
+-Ameliorer le style:
     -Front
     -Back
+
+-relier table image a editionjeu et a jeu pour inserer les images directement a partir de l'edition sans recuperer les infos a partir du dossier images

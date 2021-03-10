@@ -103,7 +103,7 @@ class BackController{
     //redirige vers la page jeu ou on applique la fonction getJeuCategorieName($id) de CategorieManager  et la fonction getJeu($id) de JeuManager
     function editionJeu($id){
         $categorie = new \Project\Models\CategorieManager();
-        $getCategorie = $categorie->getJeuCategorieName($id);
+        $getCategorie = $categorie->getJeuCategorie($id);
 
         $jeu = new \Project\Models\JeuManager();
         $getJeu = $jeu->getJeuAdmin($id);

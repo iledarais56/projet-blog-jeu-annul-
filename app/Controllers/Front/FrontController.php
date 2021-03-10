@@ -20,6 +20,8 @@ class FrontController{
 
     //redirige vers  la page categorie ou on applique la fonction getJeu($id) de jeuManager
     function categorie($id){
+        $categorie = new \Project\Models\CategorieManager();
+        $CategorieName = $categorie->getCategorieName($id);
 
         $jeu = new \Project\Models\jeuManager();
         $jeux = $jeu->getJeu($id);
@@ -39,7 +41,7 @@ class FrontController{
         require'app/views/Front/jeuFiche.php';
     }
 
-//commentaire--------------------------------------------------------------
+//commentaires--------------------------------------------------------------
 
     //redirige vers  la page commentaire
     function createCommentaire($id_jeu,$categorie,$title){
@@ -70,7 +72,6 @@ class FrontController{
         require'app/views/Front/commentaires.php';
     }
 
-
     //redirige vers  la page commentaireFait ou on applique les fonctions newCommentaire de CommentaireManager et getJeuAdmin de jeuManager
     function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
         $commentaire = new \Project\Models\jeuManager();
@@ -80,6 +81,14 @@ class FrontController{
         $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);
 
         require'app/views/Front/commentaireFait.php';
+    }
+
+    //redirige vers  la page commentairevide ou on applique la fonction  getJeuAdmin de jeuManager
+    function CommentaireVide($id){
+        $commentaire = new \Project\Models\jeuManager();
+        $getJeuAdmin = $commentaire->getJeuAdmin($id);
+
+        require'app/views/Front/commentaireVide.php';
     }
    
     //redirige vers  la page commentaire ou on applique la fonction getCommentaire($id) de CommentaireManager
@@ -109,7 +118,9 @@ class FrontController{
             header('Location: app/views/Front/error.php');
         }
     }
-    //pour aller sur la page mentions légales
+
+
+//pour aller sur la page mentions légales----------------------------------------------
     function mentions(){
         require'app/views/Front/mentions.php';
     }

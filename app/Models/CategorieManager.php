@@ -16,17 +16,24 @@ class CategorieManager extends Manager{
     //affiche tout  de la table categories ou l'id =$id
     public function getCategorie($id){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('SELECT * FROM jeux  WHERE id=?');
+        $req = $bdd->prepare('SELECT * FROM categories  WHERE id=?');
         $req->execute(array($id));
         return $req;
     }
     
-    //affiche le titre  de la table categories ou l'id = categorie du jeu avec l'id=$id
-    public function getJeuCategorieName($id){
+    //affiche tout  de la table categories ou l'id = categorie du jeu avec l'id=$id
+    public function getJeuCategorie($id){
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('SELECT * FROM categories  WHERE id=(SELECT categorie FROM jeux where id=?)');
         $req->execute(array($id));
         return $req;
     }
 
+    //recupere le nom de la categorie
+    public function getCategorieName($id){
+        $bdd = $this->bdConnect();
+        $req = $bdd->prepare('SELECT title FROM categories  WHERE id=?');
+        $req->execute(array($id));
+        return $req;
+    }
 }
