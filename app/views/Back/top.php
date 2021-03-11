@@ -5,7 +5,7 @@
 <section>
     <div class="article_about">
         <h2>Gestion du top</h2>
-        <div class="all-articles">
+        <div class="all-articles text_content">
             <div class="article">
                 <div class="card_mail">
                     <div class="form_contact">
@@ -25,7 +25,7 @@
                                     
                                 <?php }  ?> 
                             <br>
-                            <input type="submit" value="editer ce top">
+                            <input type="submit" value="editer ce top" name="submit"  class="submit">
                             <br>
                         </form>
                     </div>    

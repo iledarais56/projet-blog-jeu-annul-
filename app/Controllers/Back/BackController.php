@@ -149,8 +149,9 @@ class BackController{
     }
     function editTop($update1,$update2,$update3){
 
+        var_dump($update1);
         $top = new \Project\Models\TopManager();
-        $editTop = $top->updateTop($update1,$update2,$update3);
+        $editTop = $top->updateTop1($update1,$update2,$update3);
 
         header('location: indexAdmin.php?action=topsucces');
     }

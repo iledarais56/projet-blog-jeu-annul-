@@ -20,7 +20,7 @@ li{
     padding: 10px;
 }
 body{
-  min-height:100%;
+  height:100%;
 }
 header,footer{
   background:linear-gradient(to right bottom,rgba(168, 149, 152, 0.808),#421f1f);
@@ -50,8 +50,9 @@ header a:hover,.footer_top a:hover{
 }
 main{
   background-color: #D5CAD6;
-  min-height:350px;
+  min-height:700px;
   margin:0 auto;
+  max-width:100%;
 }
 
 .article,.bloc{
@@ -222,4 +223,5 @@ input[type=text], textarea, input[type=email] {
   footer{
     height: 122px;
     width:100%;
+    bottom:0;
   }
