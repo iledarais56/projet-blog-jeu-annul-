@@ -94,7 +94,6 @@ class BackController{
     //redirige vers l'action jeuxListe ou on applique la fonction newJeu() de JeuManager
     function newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote){
         $jeu = new \Project\Models\JeuManager();
-        
         $newJeu = $jeu->newJeu($newTitle,$newContent,$newImage,$newCategorie,$newAvis,$newNote);
 
         header('location: indexAdmin.php?action=jeuxListe');
@@ -141,22 +140,25 @@ class BackController{
     //redirige vers la page image ou on applique la fonction getImages() de ImageManager
     function top(){
         $jeu = new \Project\Models\jeuManager();
-        $jeux = $jeu->getJeux();
+        $getJeux = $jeu->getJeuxForTop();
 
         $top = new \Project\Models\TopManager();
         $tops = $top->getJeuFromTop();
 
         require'app/views/Back/top.php';
     }
-    function editTop(){
-        $top = new \Project\Models\TopManager();
-        $editTop = $top->updateTop();
+    function editTop($update1,$update2,$update3){
 
         $top = new \Project\Models\TopManager();
-        $tops = $top->getJeuFromTop();
+        $editTop = $top->updateTop($update1,$update2,$update3);
 
-        require'app/views/Back/top.php';
+        header('location: indexAdmin.php?action=topsucces');
     }
+    function topsucces(){
+        require'app/views/Back/TopSucces.php';
+    }
+    
+  
 
 //gestion des images--------------------------------------------------------------------------------
 

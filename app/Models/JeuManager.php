@@ -11,6 +11,11 @@ class JeuManager extends Manager{
         $req = $bdd->query('SELECT *FROM jeux ORDER BY id DESC');
         return $req;
     }
+    public function getJeuxForTop(){
+        $bdd = $this->bdConnect();
+        $req = $bdd->query('SELECT id AS id_jeu,title AS titreJeu FROM jeux ');
+        return $req;
+    }
 
     //supprime le jeu a l'id=$id
     public function deleteJeux($id){
