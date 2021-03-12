@@ -147,14 +147,15 @@ class BackController{
 
         require'app/views/Back/top.php';
     }
-    function editTop($update1,$update2,$update3){
+    function editTop($update,$id){
 
-        var_dump($update1);
         $top = new \Project\Models\TopManager();
-        $editTop = $top->updateTop1($update1,$update2,$update3);
+        $editTop = $top->updateTop($update,$id);
 
         header('location: indexAdmin.php?action=topsucces');
     }
+    
+    
     function topsucces(){
         require'app/views/Back/TopSucces.php';
     }

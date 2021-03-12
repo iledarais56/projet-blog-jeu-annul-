@@ -106,12 +106,12 @@ try{
             $backController->top(); 
         }
         elseif($_GET['action']=='editionTop'){
-            $update1 = $_POST['numero1'];
-            $update2 = $_POST['numero2'];
-            $update3 = $_POST['numero3'];
+            $id = $_GET['id'];
+            $update = $_POST['numero'];
 
-            $backController->editTop($update1,$update2,$update3);
+            $backController->editTop($update,$id);
         }
+       
         elseif($_GET['action']=='topsucces'){
             $backController->topsucces(); 
         }
