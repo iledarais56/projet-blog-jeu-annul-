@@ -1,17 +1,21 @@
 
--finir admin top :
-    -recuperation des données du top pour l'updater sur la table.(recupere les données mais ne fait pas l'update)
+pour projet final
+
+-mettre une page rgpd correcte
+-pop up cookies(javascript)
 
 -possibilitée de mettre une note dans les commentaires postés
  pour faire moyenne des avis.
 
-pour projet final
+-ajouter une page avis complet et donc un champ avis complet dans la page jeu une colonne +  une colonne - une colonne conclusion
 
--Ameliorer le style:
+-Ameliorer le style :
     -Front
     -Back
 
--relier table image a editionjeu et a jeu pour inserer les images directement a partir de l'edition sans recuperer les infos a partir du dossier images
+- inserer les images directement a partir de l'edition du jeu
 
 
 -peut etre relier a une api (board game atlas )pour charger les images
+
+-ORM
