@@ -5,10 +5,10 @@ class CommentaireManager extends Manager{
     //les requetes liées aux commentaires
 
     //injecte un nouveau commentaire dans la table commentaires
-    public function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
+    public function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$newNotepost,$categorie,$id){
         $bdd = $this->bdConnect();
-        $req = $bdd->prepare('INSERT INTO commentaires(id_jeu,pseudo,content,totalContent)VALUE(?,?,?,?)');
-        $req->execute(array($newIdJeu,$newPseudo,$newContent,$newTotalContent));
+        $req = $bdd->prepare('INSERT INTO commentaires(id_jeu,pseudo,content,totalContent,notepost)VALUE(?,?,?,?,?)');
+        $req->execute(array($newIdJeu,$newPseudo,$newContent,$newTotalContent,$newNotepost));
         return $req; 
     }
 
@@ -50,6 +50,12 @@ class CommentaireManager extends Manager{
         $bdd = $this->bdConnect();
         $req = $bdd->prepare('DELETE FROM commentaires WHERE id=?');
         $req->execute(array($id));
+    }
+    public function getMoyenne($id){
+        $bdd = $this->bdConnect();
+        $req = $bdd->prepare('SELECT ROUND((SELECT AVG(`notepost`)),1)AS moyenne FROM `commentaires` WHERE `id_jeu`=?');
+        $req->execute(array($id));
+        return $req;
     }
    
     

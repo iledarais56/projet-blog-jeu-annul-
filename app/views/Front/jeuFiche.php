@@ -1,7 +1,9 @@
 <?php ob_start(); ?>
 
+
 <?php $jeu =$getJeuFiche->fetch(); ?>
 <?php  $commentaires = $getCommentaires->fetchAll(); ?>
+<?php $moyenne = $getMoyenne->fetch(); ?>
 <section>
     
         <h1><?= $jeu['title']?></h1> <br><br>
@@ -18,8 +20,14 @@
                     <div class="bloc">
                         <h3 class="soulign">Ma note :</h3>
                         <br>
-                        <h3 id="note"><?=  htmlspecialchars($jeu['note']) ?>/20</h3>
+                        <h3 class="note" ><?=  htmlspecialchars($jeu['note']) ?>/20</h3>
                     </div>
+                    <div class="bloc">
+                        <h3 class="soulign">moyenne des avis :</h3>
+                        <br>
+                        <h3 class="note" ><?=  htmlspecialchars($moyenne['moyenne']) ?>/20</h3>
+                    </div>
+                   
                     <div class="bloc">
                         <h3 class="soulign">Mon avis :</h3>
                         <br>

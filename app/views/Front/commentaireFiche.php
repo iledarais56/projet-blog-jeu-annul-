@@ -2,21 +2,28 @@
 
 <?php  $commentaire = $getCommentaire->fetch(); ?>
 <section>
-    <div class="newImg">
-        <h2>commentaire sur le jeu <?php echo $commentaire['titreJeu'] ?></h2>
+    <div >
+        <h2 class="soulign">commentaire sur le jeu <?php echo $commentaire['titreJeu'] ?></h2>
         <br>
-        <div class="articles">
-            <div class="commentairebloc">
-                <p class="text">posté par:  &nbsp <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
-                
-                <p class="text">Impression générale: <br><br>" <?=  htmlspecialchars($commentaire['content']) ?> " </p>
+        <div class="all-articles">
+            <div class="comment">
+                <div class="commentairebloc2">
+                    <div class="commentairebloc">
+                        <p class="text soulign">posté par:  </p><p class="text "> <?=  htmlspecialchars($commentaire['pseudo']) ?></p>
+                        
+                        <p class="text soulign">Impression générale: </p><p class="text ">" <?=  htmlspecialchars($commentaire['content']) ?> " </p>
+                    </div>
+                    <div class="commentairebloc">
+                        <p class="soulign text">Note: </p><p class="note"><?=  htmlspecialchars($commentaire['notepost']) ?> </p>
+                    </div>
+                    <br>
+                    <br>
+                </div>
             </div>
-            <br>
-            <br>
-        </div> 
-        <div class="commentairebloc">
-            <p>&nbsp &nbsp<?=  htmlspecialchars($commentaire['totalContent']) ?></p>
-        </div>
+            <div class="commentairebloc commentairebloc1">
+                <p>&nbsp &nbsp<?=  htmlspecialchars($commentaire['totalContent']) ?></p>
+            </div>
+        </div>   
         <br>
         <br>
         <div class="all-articles" >

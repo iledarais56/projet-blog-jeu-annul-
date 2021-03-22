@@ -38,8 +38,9 @@ try{
             $newPseudo = $_POST['pseudo'];
             $newContent = $_POST['content'];
             $newTotalContent = $_POST['totalContent'];
-            if(!empty($newPseudo)&&!empty($newContent)&&!empty($newTotalContent)){
-                $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);}
+            $newNotepost = $_POST['notepost'];
+            if(!empty($newPseudo)&&!empty($newContent)&&!empty($newTotalContent)&&!empty($newNotepost)){
+                $frontController->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$newNotepost,$categorie,$id);}
             else($frontController->CommentaireVide($id)); 
         }
         elseif($_GET['action']=='getCommentaire'){

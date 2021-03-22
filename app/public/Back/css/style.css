@@ -23,7 +23,9 @@ h3{
 }
 .article{
     width: 20%;
+    text-align: center;
     border: 1px solid;
+    margin-top:10px;
     min-height: 400px;
     border-radius: 5px;
     box-shadow:2px 2px 5px black;
@@ -36,6 +38,7 @@ h3{
 
 .all-articles{
     display: flex;
+    flex-wrap:wrap;
     justify-content: space-evenly;
 }
 

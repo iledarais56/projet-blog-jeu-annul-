@@ -11,7 +11,8 @@
                         <a href="index.php?action=categorie&id=<?=$categorie['id'] ?>">
                             <div class="article categorie">
                                 <div class="card_mail">
-                                    <h2><?= htmlspecialchars($categorie['title']) ?></h2><br><br>
+                                    <h2><?= htmlspecialchars($categorie['title']) ?></h2>
+                                    <br>
                                     <div class="image-container">
                                         <img src="app/public/Front/images/dés.jpg" alt="<?= $categorie['title']?>" ><br>
                                     </div>

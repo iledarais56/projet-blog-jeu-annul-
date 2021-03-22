@@ -12,6 +12,7 @@ class FrontController {
 
     //redirige vers  la page categories ou on applique la fonction getCategories() de CategorieManager
     function categories(){
+
         $categorie = new \Project\Models\CategorieManager();
         $Categories = $categorie->getCategories();
 
@@ -33,11 +34,13 @@ class FrontController {
 
     //redirige vers  la page jeufiche ou on applique la fonction getJeuFiche($id,$categorie) de jeuManager et la fonction getCommentaires($id) de CommentaireManager
     function jeuFiche($id,$categorie){
+
+        $moyenne = new \Project\Models\CommentaireManager();
+        $getMoyenne = $moyenne->getMoyenne($id);
         $jeu = new \Project\Models\jeuManager();
         $getJeuFiche = $jeu->getJeuFiche($id,$categorie);
         $commentaire = new \Project\Models\CommentaireManager();
         $getCommentaires =$commentaire->getCommentaires($id);
-
       
 
         require'app/views/Front/jeuFiche.php';
@@ -85,12 +88,12 @@ class FrontController {
     }
 
     //redirige vers  la page commentaireFait ou on applique les fonctions newCommentaire de CommentaireManager et getJeuAdmin de jeuManager
-    function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id){
+    function newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$newNotepost,$categorie,$id){
         $commentaire = new \Project\Models\jeuManager();
         $getJeuAdmin = $commentaire->getJeuAdmin($id);
 
         $commentaire = new \Project\Models\CommentaireManager();
-        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$categorie,$id);
+        $Commentaires = $commentaire->newCommentaire($newIdJeu,$newPseudo,$newContent,$newTotalContent,$newNotepost,$categorie,$id);
 
         require'app/views/Front/commentaireFait.php';
     }

@@ -29,5 +29,13 @@ class CategorieManager extends Manager{
         return $req;
     }
 
+
+    //affiche le nombre de jeux par catégorie
+    public function CategorieNumberOfJeux($id){
+        $bdd = $this->bdConnect();
+        $req = $bdd->prepare('SELECT COUNT(*)AS number FROM jeux where categorie = $id');
+        $req->execute(array($id));
+        return $req;
+    }
     
 }

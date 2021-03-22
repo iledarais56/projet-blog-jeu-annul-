@@ -3,14 +3,13 @@ pour projet final
 
 -mettre une page rgpd correcte
 -pop up cookies(javascript)
-
--possibilitée de mettre une note dans les commentaires postés
- pour faire moyenne des avis.
+-message erreur formulaire contact
+-relier a une API( positionnement googleMap )
 
 -ajouter une page avis complet et donc un champ avis complet dans la page jeu une colonne +  une colonne - une colonne conclusion
 
 -Ameliorer le style :
-    -Front
+
     -Back
 
 - inserer les images directement a partir de l'edition du jeu
@@ -18,4 +17,5 @@ pour projet final
 
 -peut etre relier a une api (board game atlas )pour charger les images
 
--ORM
+
+-responsive
