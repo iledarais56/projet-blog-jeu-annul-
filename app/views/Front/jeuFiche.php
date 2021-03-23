@@ -39,6 +39,13 @@
             </div>
         </div>
         <div>
+            <h3 class="soulign">Vidéos en lien avec ce jeu:</h3>
+            <br>
+            <div class="all-articles">
+                <!-- mettre ici les videos recupérées de l API youtube -->
+            </div>
+        </div>
+        <div>
             <h3 class="soulign">Derniers commentaires sur ce jeu:</h3>
             <br>
             <div class="all-articles">

@@ -3,6 +3,10 @@
 session_start();
 require_once __DIR__ .'/vendor/autoload.php';
 
+
+$apikey="AIzaSyBh3ujyv1iDUxkVnvihBAhqJY_4wMUJguY";
+
+
 try{
     $frontController = new \Project\Controllers\Front\FrontController();
     if(isset($_GET['action'])){

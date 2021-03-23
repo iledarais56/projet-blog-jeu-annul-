@@ -1,10 +1,9 @@
 
 pour projet final
 
--mettre une page rgpd correcte
--pop up cookies(javascript)
--message erreur formulaire contact
--relier a une API( positionnement googleMap )
+-mettre une page rgpd correcte + pop up cookies(javascript)
+-message erreur formulaire contact(javascript)
+-relier a une API( video youtube )
 
 -ajouter une page avis complet et donc un champ avis complet dans la page jeu une colonne +  une colonne - une colonne conclusion
 
@@ -19,3 +18,8 @@ pour projet final
 
 
 -responsive
+
+
+
+api youtube:
+clé API:   AIzaSyBh3ujyv1iDUxkVnvihBAhqJY_4wMUJguY
